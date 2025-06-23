@@ -1,0 +1,1 @@
+Note: this is not the official codigo-news project. This is a test project built with ionic angular and it is not related to the official codigo-news project.
