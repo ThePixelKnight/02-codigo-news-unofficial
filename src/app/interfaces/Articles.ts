@@ -11,7 +11,7 @@ export interface ArticlesResponse {
     publicReactionsCount:   number;
     collectionID:           number | null;
     publishedTimestamp:     Date;
-    language:               Language | null;
+    language:               Language;
     subforemID:             number | null;
     positiveReactionsCount: number;
     coverImage:             null | string;
@@ -26,8 +26,8 @@ export interface ArticlesResponse {
     tagList:                string[];
     tags:                   string;
     user:                   User;
-    flareTag?:              FlareTag;
     organization?:          Organization;
+    flareTag?:              FlareTag;
 }
 
 export interface FlareTag {
@@ -49,8 +49,8 @@ export interface Organization {
 }
 
 export enum ReadablePublishDate {
-    Jun22 = "Jun 22",
-    Jun23 = "Jun 23",
+    Jun29 = "Jun 29",
+    Jun30 = "Jun 30",
 }
 
 export enum TypeOf {
