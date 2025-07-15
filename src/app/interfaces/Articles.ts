@@ -1,9 +1,9 @@
 export interface ArticlesResponse {
-    typeOf:                 TypeOf;
+    typeOf:                 "article";
     id:                     number;
     title:                  string;
     description:            string;
-    readablePublishDate:    ReadablePublishDate;
+    readablePublishDate:    string;
     slug:                   string;
     path:                   string;
     url:                    string;
@@ -11,8 +11,8 @@ export interface ArticlesResponse {
     publicReactionsCount:   number;
     collectionID:           number | null;
     publishedTimestamp:     Date;
-    language:               Language;
-    subforemID:             number | null;
+    language:               "en";
+    subforemID:             number;
     positiveReactionsCount: number;
     coverImage:             null | string;
     socialImage:            string;
@@ -36,25 +36,12 @@ export interface FlareTag {
     textColorHex: string;
 }
 
-export enum Language {
-    En = "en",
-}
-
 export interface Organization {
     name:           string;
     username:       string;
     slug:           string;
     profileImage:   string;
     profileImage90: string;
-}
-
-export enum ReadablePublishDate {
-    Jun29 = "Jun 29",
-    Jun30 = "Jun 30",
-}
-
-export enum TypeOf {
-    Article = "article",
 }
 
 export interface User {
