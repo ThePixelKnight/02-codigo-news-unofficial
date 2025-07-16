@@ -14,7 +14,7 @@ export class NewsService {
 
   getTopArticles() {
     return this.http
-      .get<ArticlesResponse[]>(`https://dev.to/api/articles?top=10`, {
+      .get<ArticlesResponse>(`https://dev.to/api/articles?top=10`, {
         params: {
           apiKey: apiKey,
         },

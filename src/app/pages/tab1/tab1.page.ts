@@ -4,6 +4,9 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
+  IonGrid,
+  IonRow,
+  IonCol
 } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
@@ -19,6 +22,9 @@ import { NewsService } from 'src/app/services/news.service';
     IonToolbar,
     IonTitle,
     IonContent,
+    IonGrid,
+    IonRow,
+    IonCol
   ],
 })
 export class Tab1Page implements OnInit {
@@ -31,6 +37,11 @@ export class Tab1Page implements OnInit {
   }
 
   ngOnInit() {
+    this.newsService.getTopArticles()
+      .subscribe( resp => {
+        console.log(resp)
+      })
+
   }
 
 }
