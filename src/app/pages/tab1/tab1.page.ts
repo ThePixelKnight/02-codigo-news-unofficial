@@ -4,14 +4,12 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
-  IonGrid,
-  IonRow,
-  IonCol
 } from '@ionic/angular/standalone';
 
 import { addIcons } from 'ionicons';
 import { sunnyOutline, moonOutline } from 'ionicons/icons';
 import { NewsService } from 'src/app/services/news.service';
+import { ArticlesResponse } from 'src/app/interfaces/Articles';
 
 @Component({
   selector: 'app-tab1',
@@ -21,13 +19,12 @@ import { NewsService } from 'src/app/services/news.service';
     IonHeader,
     IonToolbar,
     IonTitle,
-    IonContent,
-    IonGrid,
-    IonRow,
-    IonCol
+    IonContent
   ],
 })
 export class Tab1Page implements OnInit {
+
+  articles: ArticlesResponse[] = [];
 
   constructor(private newsService: NewsService) {
     addIcons({
@@ -37,11 +34,8 @@ export class Tab1Page implements OnInit {
   }
 
   ngOnInit() {
-    this.newsService.getTopArticles()
-      .subscribe( resp => {
-        console.log(resp)
-      })
-
+    this.newsService.getTopArticles().subscribe(resp => {
+      console.log(resp)
+    });
   }
-
 }
